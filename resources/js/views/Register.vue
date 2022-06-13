@@ -9,12 +9,10 @@
                 <input v-model="user.last_name" type="text" name="last_name" class="w-full h-12 border border-gray-800 rounded px-3" placeholder="Last Name" />
                 <input v-model="user.email" type="text" name="email" class="w-full h-12 border border-gray-800 rounded px-3" placeholder="Email" />
                 <div class="w-full flex items-center border border-gray-800 rounded px-3">
-                    <input v-model="user.password" type="password" class="w-4/5 h-12" placeholder="Password" />
-                    <span class="text-blue-700 hover:bg-blue-400 rounded-md px-3">Show</span>
+                    <input v-model="user.password" type="password" class="w-full h-12" placeholder="Password" />
                 </div>
                 <div class="w-full flex items-center border border-gray-800 rounded px-3">
-                    <input v-model="user.password_confirmation" type="password_confirmation" class="w-4/5 h-12" placeholder="Confirm Password" />
-                    <span class="text-blue-700 hover:bg-blue-400 rounded-md px-3">Show</span>
+                    <input  v-model="user.password_confirmation" type="password" class="w-full h-12" placeholder="Confirm Password" />
                 </div>
                 <div class="text-sm ">
                     <p class="inline">Already have an account</p>
@@ -57,6 +55,10 @@
             .catch((err)=>{
                 errorMsg.value = err.response.data.errors
            })
+    }
+    const passwordShow = () =>{
+        if(password_show.value === 'password') return password_show.value = 'text'
+        password_show.value = 'password'
     }
 </script>
 

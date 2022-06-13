@@ -15765,6 +15765,7 @@ __webpack_require__.r(__webpack_exports__);
       password: ''
     };
     var errorMsg = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('');
+    var password_show = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('text');
 
     var login = function login(ev) {
       ev.preventDefault();
@@ -15777,11 +15778,18 @@ __webpack_require__.r(__webpack_exports__);
       });
     };
 
+    var passwordShow = function passwordShow() {
+      if (password_show.value === 'password') return password_show.value = 'text';
+      password_show.value = 'password';
+    };
+
     var __returned__ = {
       router: router,
       user: user,
       errorMsg: errorMsg,
+      password_show: password_show,
       login: login,
+      passwordShow: passwordShow,
       store: _store__WEBPACK_IMPORTED_MODULE_0__["default"],
       useRouter: vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter,
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
@@ -15840,12 +15848,18 @@ __webpack_require__.r(__webpack_exports__);
       });
     };
 
+    var passwordShow = function passwordShow() {
+      if (password_show.value === 'password') return password_show.value = 'text';
+      password_show.value = 'password';
+    };
+
     var __returned__ = {
       router: router,
       errors: errors,
       errorMsg: errorMsg,
       user: user,
       register: register,
+      passwordShow: passwordShow,
       store: _store__WEBPACK_IMPORTED_MODULE_0__["default"],
       useRouter: vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter,
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
@@ -16374,13 +16388,7 @@ var _hoisted_5 = {
 var _hoisted_6 = {
   "class": "w-full flex items-center border border-gray-800 rounded px-3"
 };
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-blue-700 hover:bg-blue-400 rounded-md px-3"
-}, "Show", -1
-/* HOISTED */
-);
-
+var _hoisted_7 = ["type"];
 var _hoisted_8 = {
   "class": "text-sm"
 };
@@ -16420,12 +16428,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.user.password = $event;
     }),
-    type: "password",
+    type: $setup.password_show,
     "class": "w-4/5 h-12",
     placeholder: "Password"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user.password]]), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, null, 8
+  /* PROPS */
+  , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelDynamic, $setup.user.password]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    onClick: $setup.passwordShow,
+    "class": "text-blue-700 hover:bg-blue-400 rounded-md px-3"
+  }, "Show")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
       name: 'Register'
     },
@@ -16484,36 +16495,22 @@ var _hoisted_5 = {
 var _hoisted_6 = {
   "class": "w-full flex items-center border border-gray-800 rounded px-3"
 };
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-blue-700 hover:bg-blue-400 rounded-md px-3"
-}, "Show", -1
-/* HOISTED */
-);
-
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "w-full flex items-center border border-gray-800 rounded px-3"
 };
-
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-blue-700 hover:bg-blue-400 rounded-md px-3"
-}, "Show", -1
-/* HOISTED */
-);
-
-var _hoisted_10 = {
+var _hoisted_8 = {
   "class": "text-sm"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "inline"
 }, "Already have an account", -1
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Login ? ");
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Login ? ");
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "text-center w-full bg-blue-900 rounded-md text-white py-3 font-medium"
 }, "Submit", -1
 /* HOISTED */
@@ -16562,32 +16559,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.user.password = $event;
     }),
     type: "password",
-    "class": "w-4/5 h-12",
+    "class": "w-full h-12",
     placeholder: "Password"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user.password]]), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user.password]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $setup.user.password_confirmation = $event;
     }),
-    type: "password_confirmation",
-    "class": "w-4/5 h-12",
+    type: "password",
+    "class": "w-full h-12",
     placeholder: "Confirm Password"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user.password_confirmation]]), _hoisted_9]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user.password_confirmation]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
       name: 'Login'
     },
     "class": "font-medium text-blue-900 hover:text-blue-300 p-2"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_12];
+      return [_hoisted_10];
     }),
     _: 1
     /* STABLE */
 
-  })]), _hoisted_13], 32
+  })]), _hoisted_11], 32
   /* HYDRATE_EVENTS */
   )])]);
 }
